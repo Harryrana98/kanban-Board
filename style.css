@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: poppins,sans-serif;
+}
+
+body{
+    background-color: rgb(24, 24, 46);
+    padding: 25px;
+    min-width: 100vh;
+
+}
+
+h1{
+    color: rgb(139, 139, 251);
+    text-align: center;
+    margin: 30px 0;
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.kanban_Board{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.todo{
+    /* border: 1px solid; */
+    box-shadow: 1px 1px 8px;
+    min-height: 300px;
+    width: 32%;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.todo h3{
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+}
+.todo input{
+    width: 100%;
+}
+.todo button{
+    width: 100%;
+}
+
+.content{
+    min-height: 300px;
+    color: #fff;
+}
