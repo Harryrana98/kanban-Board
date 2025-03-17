@@ -51,3 +51,8 @@ h1{
     min-height: 300px;
     color: #fff;
 }
+
+.task{
+    display: flex;
+    justify-content: space-between;
+}
