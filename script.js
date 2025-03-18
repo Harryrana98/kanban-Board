@@ -2,11 +2,13 @@ const AddButtons = document.querySelectorAll(".userInput button");
 // const inputValue=document.querySelector("#input")
 const contentDivs = document.querySelectorAll(".content");
 // const counts = document.querySelectorAll(".count");
+const modifyCountArr=[]
 
 contentDivs.forEach((div) => {  
   div.addEventListener("drop", dropHandler);
   div.addEventListener("dragover", dragoverHandler);
 });
+
 AddButtons.forEach((btn) => {
   btn.addEventListener("click", createTask);
 });
@@ -46,11 +48,15 @@ function createTask(e) {
   contentDiv.append(taskDiv);
   input.value = "";
   count(btn);
+  modifyCounts(null, todo.querySelector(".count"));
 
 }
 
 function dragstartHandler(e) {
   e.dataTransfer.setData("text/html", e.target.id);
+  modifyCountArr.length = 0;
+  const todo = e.target.closest(".todo");
+  modifyCountArr.push(todo.querySelector(".count"));
 
 }
 
@@ -59,26 +65,26 @@ function dropHandler(e) {
   const data = e.dataTransfer.getData("text/html");
   const findElement=document.getElementById(data)
   e.target.appendChild(findElement);
-  const oldColumn = findElement.parentElement; // Original column
-  const newColumn = e.target.closest(".content"); // New column
 
-  if (!newColumn || newColumn === oldColumn) return; // Prevent errors
 
-  newColumn.appendChild(findElement);
-
-    // Update the counts
-    updateCount(oldColumn);
-    updateCount(newColumn);
-
+  const todo = findElement.closest(".todo");
+  modifyCountArr.push(todo.querySelector(".count"));
+  modifyCounts(...modifyCountArr);
 }
 
-
-function updateCount(column) {
-  const countSpan = column.closest(".todo").querySelector(".count");
-  countSpan.innerHTML = column.children.length;
-}
 
 function dragoverHandler(e) {
   e.preventDefault();
   e.dataTransfer.dropEffect = "move";
 }
+
+function modifyCounts(countToDecrement = null, countToIncrement = null) {
+  if (countToIncrement) {
+    countToIncrement.innerText = Number(countToIncrement.innerText) + 1;
+  }
+  if (countToDecrement) {
+    countToDecrement.innerText = Number(countToDecrement.innerText) - 1;
+  }
+  modifyCountArr.length = 0;
+}
+ 
