@@ -48,7 +48,7 @@ function createTask(e) {
   contentDiv.append(taskDiv);
   input.value = "";
   count(btn);
-  modifyCounts(null, todo.querySelector(".count"));
+  modifyCounts(null, btn.querySelector(".count"));
 
 }
 
@@ -71,6 +71,8 @@ function dropHandler(e) {
   modifyCountArr.push(todo.querySelector(".count"));
   modifyCounts(...modifyCountArr);
 }
+console.log(modifyCountArr);
+
 
 
 function dragoverHandler(e) {

@@ -23,11 +23,12 @@ h1{
 .kanban_Board{
     display: flex;
     justify-content: space-between;
-
+    
 }
 
 .todo{
     /* border: 1px solid; */
+    background-color: rgb(31, 31, 54);
     box-shadow: 1px 1px 8px;
     min-height: 300px;
     width: 32%;
@@ -36,15 +37,96 @@ h1{
 }
 
 .todo h3{
-    text-align: center;
-    color: #fff;
-    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    gap: 8px;
+}
+
+.date{
+    display: block;
+    text-align: right;
+    font-size: 12px;
+    font-weight: lighter;
+    font-style: italic;
+    color: #a7a4a4;
+}
+
+.count{
+    padding: 2px 8px;
+    background-color: aliceblue;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+#pink{
+    color: #ec4899;
+
+}
+
+#yellow{
+    color:#eab308 ;
+}
+#green{
+    color: #22c55e;
+}
+#greenbtn{
+    background-color: #22c55e;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #0f172a;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+#pinkbtn{
+    background-color: #ec4899;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #0f172a;
+    font-weight: 600;
+    cursor: pointer;
+}
+#yellowbtn{
+    background-color: #eab308;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #0f172a;
+    font-weight: 600;
+    cursor: pointer;
 }
 .todo input{
     width: 100%;
+    padding: 10px;
+    color: #e2e8f0;
+    padding-left: 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color:  rgb(31, 31, 52);
+    border: 1px  solid rgba(255, 255, 255, 0.1)
+    
 }
 .todo button{
     width: 100%;
+}
+.userInput button:hover{
+    transform: translateY(-2px);
+    transition: all ease-in-out 0.3s;
+    filter: brightness(110%);    
+}
+
+.userInput{
+    /* transition:all 2s; */
 }
 
 .content{
@@ -53,6 +135,12 @@ h1{
 }
 
 .task{
-    display: flex;
-    justify-content: space-between;
+    padding: 10px;
+    background-color: #3c445a;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.task p{
+    margin-bottom: 10px;
 }
