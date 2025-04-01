@@ -27,7 +27,7 @@ h1 {
 .todo {
   /* border: 1px solid; */
   background-color: rgb(31, 31, 54);
-  box-shadow: 1px 1px 8px;
+  box-shadow: 1px 1px 8px black;
   min-height: 300px;
   width: 32%;
   padding: 25px;
